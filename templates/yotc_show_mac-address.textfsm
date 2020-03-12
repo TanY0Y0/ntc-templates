@@ -1,0 +1,13 @@
+Value MAC_ADDRESS ([0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2})
+Value INDEX (\w+)
+Value VLAN (\w+)
+Value STATE (\w+)
+Value PORT (\S+)
+
+Start
+  ^Index\s+MacAddr\s+VLAN\s+State\s+Port-OnuId\s*$$
+  ^-+\s*$$ -> MacTable
+
+MacTable
+  ^\s+${INDEX}\s+${MAC_ADDRESS}\s+${VLAN}\s+${STATE}\s+${PORT} -> Record
+  ^. -> Error
