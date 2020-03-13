@@ -1,0 +1,11 @@
+Value MAC_ADDRESS ([0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4})
+Value VLAN (\w+)
+Value STATE (\w+)
+Value PORT (\S+)
+
+Start
+  ^\s*MAC Address\s+VLAN ID\s+State\s+Port/Nickname\s+Aging\s*$$ -> MacTable
+
+MacTable
+  ^\s*${MAC_ADDRESS}\s+${VLAN}\s+${STATE}\s+${PORT} -> Record
+

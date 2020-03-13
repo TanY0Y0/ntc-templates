@@ -10,4 +10,3 @@ Start
 
 MacTable
   ^\s+${INDEX}\s+${MAC_ADDRESS}\s+${VLAN}\s+${STATE}\s+${PORT} -> Record
-  ^. -> Error
